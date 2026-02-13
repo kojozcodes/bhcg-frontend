@@ -1,0 +1,8 @@
+# Battery Health Certificate - Frontend Configuration
+
+# Backend API URL
+# Local development:
+REACT_APP_API_URL=http://localhost:5000
+
+# Production (replace with your Railway backend URL):
+# REACT_APP_API_URL=https://your-backend.up.railway.app

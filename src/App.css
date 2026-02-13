@@ -1,0 +1,473 @@
+/* 
+  Battery Health Mobile App Styles
+  Mobile-optimized, touch-friendly design
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f0f2f5;
+  overflow-x: hidden;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f0f2f5;
+}
+
+/* ========================================
+   HEADER
+   ======================================== */
+
+.header {
+  background: linear-gradient(135deg, #52C41A 0%, #389e0d 100%);
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header .logo {
+  width: 45px;
+  height: 45px;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.header h1 {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.logout-button {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.logout-button:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.logout-button:active {
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(0.98);
+}
+
+/* ========================================
+   TABS
+   ======================================== */
+
+.tabs {
+  display: flex;
+  background-color: white;
+  border-bottom: 1px solid #e0e0e0;
+  position: sticky;
+  top: 70px;
+  z-index: 99;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.tab {
+  flex: 1;
+  min-width: 140px;
+  padding: 16px 12px;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: #666;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.tab.active {
+  color: #52C41A;
+  border-bottom-color: #52C41A;
+  background-color: #f6ffed;
+}
+
+.tab:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.tab:active:not(:disabled) {
+  background-color: #f0f0f0;
+}
+
+/* ========================================
+   CONTENT
+   ======================================== */
+
+.content {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 100px; /* Space for footer */
+}
+
+.form-container,
+.list-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ========================================
+   EMPTY STATE
+   ======================================== */
+
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #666;
+}
+
+.empty-icon {
+  font-size: 80px;
+  margin-bottom: 20px;
+  opacity: 0.3;
+}
+
+.empty-state h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.empty-state p {
+  font-size: 16px;
+  color: #999;
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  padding: 12px 16px;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+.footer-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ========================================
+   BUTTONS
+   ======================================== */
+
+.btn {
+  padding: 12px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+  -webkit-tap-highlight-color: transparent;
+  flex: 1;
+  min-width: 120px;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #52C41A 0%, #389e0d 100%);
+  color: white;
+  box-shadow: 0 2px 6px rgba(82, 196, 26, 0.3);
+}
+
+.btn-primary:active:not(:disabled) {
+  background: linear-gradient(135deg, #389e0d 0%, #389e0d 100%);
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #1890FF 0%, #096dd9 100%);
+  color: white;
+  box-shadow: 0 2px 6px rgba(24, 144, 255, 0.3);
+}
+
+.btn-success:active:not(:disabled) {
+  background: linear-gradient(135deg, #096dd9 0%, #096dd9 100%);
+}
+
+.btn-secondary {
+  background: white;
+  color: #666;
+  border: 2px solid #e0e0e0;
+}
+
+.btn-secondary:active:not(:disabled) {
+  background: #f5f5f5;
+  border-color: #ccc;
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, #ff4d4f 0%, #cf1322 100%);
+  color: white;
+  box-shadow: 0 2px 6px rgba(255, 77, 79, 0.3);
+}
+
+.btn-danger:active:not(:disabled) {
+  background: linear-gradient(135deg, #cf1322 0%, #cf1322 100%);
+}
+
+/* ========================================
+   PROGRESS OVERLAY
+   ======================================== */
+
+.progress-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+.progress-card {
+  background: white;
+  border-radius: 16px;
+  padding: 32px 24px;
+  max-width: 90%;
+  width: 360px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.progress-card h3 {
+  color: #333;
+  font-size: 20px;
+  margin: 16px 0 8px 0;
+}
+
+.progress-card p {
+  color: #666;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #f0f0f0;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #52C41A 0%, #389e0d 100%);
+  transition: width 0.3s ease;
+}
+
+.progress-count {
+  color: #52C41A;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+/* ========================================
+   SPINNER
+   ======================================== */
+
+.spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid rgba(82, 196, 26, 0.2);
+  border-top-color: #52C41A;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ========================================
+   LOADING STATE
+   ======================================== */
+
+.app.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #52C41A 0%, #389e0d 100%);
+}
+
+.loading-spinner {
+  text-align: center;
+  color: white;
+}
+
+.loading-spinner .spinner {
+  border-color: rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  margin-bottom: 15px;
+}
+
+.loading-spinner p {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ========================================
+   MOBILE RESPONSIVE
+   ======================================== */
+
+@media (max-width: 768px) {
+  .header {
+    padding: 12px 16px;
+  }
+
+  .header h1 {
+    font-size: 18px;
+  }
+
+  .header .logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .logout-button {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+
+  .tab {
+    font-size: 14px;
+    padding: 14px 10px;
+    min-width: 120px;
+  }
+
+  .form-container,
+  .list-container {
+    padding: 16px;
+  }
+
+  .footer {
+    padding: 10px 12px;
+  }
+
+  .footer-buttons {
+    gap: 6px;
+  }
+
+  .btn {
+    padding: 10px 16px;
+    font-size: 14px;
+    min-width: 100px;
+  }
+
+  .progress-card {
+    padding: 24px 20px;
+    width: 320px;
+  }
+
+  .progress-card h3 {
+    font-size: 18px;
+  }
+
+  .progress-card p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+    min-width: auto;
+  }
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+
+button:focus-visible {
+  outline: 2px solid #52C41A;
+  outline-offset: 2px;
+}
+
+/* Prevent text selection on buttons */
+button {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Smooth scrolling */
+.content {
+  scroll-behavior: smooth;
+}
